@@ -1,7 +1,7 @@
-#grpc-gateway example
+# grpc-gateway example
 Fully Implemented gRPC-Gateway example in golang.
 
-#Setup
+# Setup
 Run the following Commands to install the following packages into your `$GOPATH`
 ```
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
@@ -14,7 +14,7 @@ Then, To generate the client and proxy files, run:
 ```
 This should place generated file in your `$GOPATH`. Troubleshoot as required.
 
-#Explanation
+# Explanation
 The way the entire world communicates is REST, with JSON. Google open-sourced gRPC in 2015, and it took the tech industry by storm. It goes perfectly hand in hand in microservice communication and with golang. Grpc-Gateway is an API to assist with the runtime translation of JSON into Protocol Buffers, the exchange format used by gRPC, and back. It generates a proxy attached to your microservice, which recieves the data and parses it into protobuf/json for you. It is a great tool to help companies adapt gRPC without rewriting their entire existing architecture, as well. It is a very powerful translation layer.
 
 ## Code Explanation
@@ -39,5 +39,5 @@ Here, `"val1"` and `"val2"` are the arguments for the math evaluation, and the `
 ```
 The service is being implemented with gRPC, but we communicate with it using REST.
 
-#Author
+# Author
 - Aditya Prerepa 2019.

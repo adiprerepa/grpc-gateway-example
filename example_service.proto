@@ -2,6 +2,13 @@ syntax = "proto3";
 package example_service;
 import "google/api/annotations.proto";
 
+// This message represents
+// a mathematical operation.
+// Supported Operations:
+// - Addition
+// - Subtraction
+// - Multiplication
+// - Division
 message OperationRequest {
   int32 val1 = 1;
   int32 val2 = 2;
@@ -10,11 +17,14 @@ message OperationRequest {
 
 message OperationResponse {
   int64 response = 1;
+  // returns false is the operation_type 
+  // is not supported
   bool operation_valid = 2;
 }
 
 service OperationService {
   rpc PerformOperation(OperationRequest) returns (OperationResponse) {
+    // specify REST endpoint
     option (google.api.http) = {
       post: "/api/v1/perform_operation"
       body: "*"

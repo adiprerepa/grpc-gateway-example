@@ -9,12 +9,18 @@ import (
 	"net"
 )
 
+/*
+ * Implement the service
+ */
 type exampleServer struct{}
 
 func newExampleServer() example.OperationServiceServer {
 	return new(exampleServer)
 }
 
+/*
+ * The base calculation is done here. We send headers because REST requires it.
+ */
 func (s* exampleServer) PerformOperation(ctx context.Context, msg *example.OperationRequest) (*example.OperationResponse, error) {
 	var result int64 = 0
 	permitted := true
