@@ -1,2 +1,4 @@
 main
 service
+.idea/*
+post_script.sh
