@@ -1,0 +1,23 @@
+syntax = "proto3";
+package example_service;
+import "google/api/annotations.proto";
+
+message OperationRequest {
+  int32 val1 = 1;
+  int32 val2 = 2;
+  string operation_type = 3;
+}
+
+message OperationResponse {
+  int64 response = 1;
+  bool operation_valid = 2;
+}
+
+service OperationService {
+  rpc PerformOperation(OperationRequest) returns (OperationResponse) {
+    option (google.api.http) = {
+      post: "/api/v1/perform_operation"
+      body: "*"
+    };
+  }
+}
